@@ -20,3 +20,16 @@ class LinkedList:
             new_node.next = self.head
             # move the head to the head node
             self.head = new_node 
+    
+    def insertAtIndex(self, data, index):
+        if index == 0:
+            self.insertAtBegin(data)
+        
+        curr = self.head
+        while index > 1 or curr != None:
+            curr = curr.next 
+
+        if curr == None:
+            print("Index not Found")
+        
+        curr.next = Node(data, None)
